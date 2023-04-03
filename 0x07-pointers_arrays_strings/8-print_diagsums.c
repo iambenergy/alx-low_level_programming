@@ -9,15 +9,17 @@
 
 void print_diagsums(int *a, int size)
 {
-	int i, j, k = 0;
+	int i, j, k, l, m = 0;
 
-	for (k = 0; k < size; k++)
+	for (i = 0; i < size; i++)
 	{
-		i = i + a[k * size + k];
+		k = (i * size) + i;
+		l += *(a + k);
 	}
-
-	for (k = size - 1; k >= 0; k--)
+	for (j = 0; j < size; j++)
 	{
-		j += a[k * size + (size - k - 1)];
+		k = (j * size) + (size - 1 - j);
+		m += *(a + k);
 	}
+	printf("%i, %i\n", l, m);
 }
