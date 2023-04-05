@@ -14,7 +14,7 @@ int test(int x, int y)
 		return (x);
 	else if (x * x > y)
 		return (-1);
-	return (test(y, x + 1));
+	return (test(x + 1, y));
 }
 
 /**
